@@ -1,0 +1,61 @@
+Day 38:
+==========
+
+a) Encapsulation in Python
+===============================
+Encapsulation is the process of binding data and methods together and restricting direct access to data.
+Python achieves encapsulation using access specifiers:
+Public → var
+Protected → _var
+Private → __var (name mangling)
+
+Example:
+class Bank:
+    def __init__(self, balance):
+        self.__balance = balance   # private variable
+
+    def show_balance(self):
+        print(self.__balance)
+
+b = Bank(5000)
+b.show_balance()
+# b.__balance → Error
+
+Key Points:
+Improves data security
+Controls data modification
+Enhances maintainability
+
+
+b) Setter Methods
+========================
+Setter methods are used to set or update private variables safely.
+
+Example:
+class Student:
+    def set_marks(self, marks):
+        if marks >= 0:
+            self.__marks = marks
+
+s = Student()
+s.set_marks(85)
+
+Key Points:
+Allows validation before updating
+Controls data modification
+
+
+c) Getter Methods
+======================
+Getter methods are used to access private variables.
+
+Example:
+class Student:
+    def get_marks(self):
+        return self.__marks
+
+print(s.get_marks())
+
+Key Points:
+Read-only access if needed
+Maintains encapsulation
